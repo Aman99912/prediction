@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiranga</title>
+    <link rel="shortcut icon" href="../images/tringa.png" type="image/x-icon">
+   <link rel="stylesheet" href="./games.css">
+</head>
+<body>
+    <div class="container">
+        <h2><img src="../images/tringa.png" height="50px" width="50px" alt=""></h2>
+        <input type="number" id="searchBox" placeholder="Enter a number">
+        <button onclick="generateResult()">Go</button>
+        <p id="output">
+            <span id="boold"></span>
+            <span id="result"></span>
+        </p>
+        <button onclick="nextPage()">Next</button>
+        <button onclick="viewSite()">View</button>
+    </div>
+    
+    <script>
+        function generateResult() {
+            let input = document.getElementById("searchBox").value;
+            if(input === "") {
+                alert("Please enter a number");
+                return;
+            }
+            let randomText = Math.random() < 0.5 ? "Small" : "Big";
+            document.getElementById("boold").innerText = ` ${input} :`;
+            document.getElementById("result").innerText = `  ${randomText}`;
+        }
+
+        function nextPage() {
+            document.getElementById("searchBox").value ='';
+            document.getElementById("output").innerText = "";
+        }
+
+        function viewSite() {
+            window.location.href = "https://diudream.org/#/register?invitationCode=1171112553877"; // Replace with your site link
+        }
+    </script>
+</body>
+</html>
